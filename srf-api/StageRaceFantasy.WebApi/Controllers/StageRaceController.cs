@@ -14,7 +14,7 @@ namespace StageRaceFantasy.WebApi.Controllers;
 [ApiController]
 public class StageRaceController : ControllerBase
 {
-    [HttpPost("api/stageraces")]
+    [HttpPost("api/stage-races")]
     public async Task<ActionResult<AppResponse<int>>> CreateStageRace(
         [FromBody] CreateStageRaceCommand command,
         [FromServices] CreateStageRaceCommandHandler handler,
@@ -25,7 +25,7 @@ public class StageRaceController : ControllerBase
         return appResponse.ToActionResult();
     }
 
-    [HttpGet("api/stageraces")]
+    [HttpGet("api/stage-races")]
     public async Task<ActionResult<AppResponse<PaginatedListResponse<StageRaceDto>>>> ListStageRaces(
         [FromQuery] ListStageRacesQuery query,
         [FromServices] ListStageRacesQueryHandler handler,
@@ -36,7 +36,7 @@ public class StageRaceController : ControllerBase
         return appResponse.ToActionResult();
     }
 
-    [HttpGet("api/stageraces/{stageraceId}")]
+    [HttpGet("api/stage-races/{stageraceId}")]
     public async Task<ActionResult<AppResponse<StageRaceDto>>> GetStageRaceById(
         [FromRoute] int stageraceId,
         [FromServices] GetStageRaceByIdQueryHandler handler,
@@ -47,7 +47,7 @@ public class StageRaceController : ControllerBase
         return appResponse.ToActionResult();
     }
 
-    [HttpPut("api/stageraces/{stageraceId}")]
+    [HttpPut("api/stage-races/{stageraceId}")]
     public async Task<ActionResult<AppResponse>> UpdateStageRace(
         [FromRoute] int stageraceId,
         [FromBody] UpdateStageRaceCommand command,
@@ -59,7 +59,7 @@ public class StageRaceController : ControllerBase
         return appResponse.ToActionResult();
     }
 
-    [HttpDelete("api/stageraces/{stageraceId}")]
+    [HttpDelete("api/stage-races/{stageraceId}")]
     public async Task<ActionResult<AppResponse>> DeleteStageRace(
         [FromRoute] int stageraceId,
         [FromServices] DeleteStageRaceCommandHandler handler,
